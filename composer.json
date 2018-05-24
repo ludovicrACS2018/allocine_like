@@ -1,0 +1,14 @@
+{
+    "name": "draker/twig",
+    "description": "Premier essai twig sur un allocine like",
+    "license": "Open Source",
+    "authors": [
+        {
+            "name": "Jim Pronesti",
+            "email": "drak3r21@hotmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.0"
+    }
+}
