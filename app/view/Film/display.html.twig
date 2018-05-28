@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base href="http://localhost/annuaire_films/"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <title>{{ film.fil_titre }}</title>
+</head>
+<body>
+    <header>
+        <h1>{{ film.fil_titre }}</h1>
+    </header>
+
+    <section>
+        <img src="{{ film.fil_image }}" alt="{{ film.fil_titre }}">
+        <p>Synopsis : {{ film.fil_description }}</p>
+        <p>Date de sortie : {{ film.fil_annee }}</p>
+    </section>
+    
+    <footer>
+
+    </footer>
+</body>

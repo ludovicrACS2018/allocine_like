@@ -5,4 +5,4 @@ RewriteBase /annuaire_films
 RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteCond %{SCRIPT_FILENAME} !-d
 # QSA oblige à combiner les paramètres GET à l'url
-RewriteRule (.*) index.php?request=$1 [QSA,L]
+RewriteRule (.*) index.php?query=$1 [QSA,L]
