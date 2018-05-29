@@ -8,28 +8,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-
-<body> 
-
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="../Index/display.html.twig" class="brand-logo">Allocine Like</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="../Index/display.html.twig">Accueil</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="../Index/display.html.twig">Accueil</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      
-    </div>
-  </div>
-
-
+<body>
+  <header>
+    <nav class="light-blue lighten-1" role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="../index.php" class="brand-logo grey-text text-darken-3 t-uppercase">Allocine Like</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="grey-text text-darken-3" href="../index.php">Accueil</a></li>
+        </ul>
+        <ul id="nav-mobile" class="sidenav">
+          <li><a href="../index.php">Accueil</a></li>
+        </ul>
+        <a href="../index.php" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </header>
     <div class="container">
     <div class="section">
         <h1 class="header center orange-text">{{ film.fil_titre }}</h1>
@@ -57,24 +49,18 @@
                 -
             {% endif %}
         </p>
+      <!--   Icon Section   -->
+      
 
     </div>
-    <br><br>
   </div>
-
-
-
-
   <footer class="page-footer orange">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Zombie Ipsum</h5>
           <p class="grey-text text-lighten-4">Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem.</p>
-
-
         </div>
-
         <div class="col l3 s12 right">
           <h5 class="white-text">Contact</h5>
           <ul>
@@ -92,7 +78,6 @@
       </div>
     </div>
   </footer>
-
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
