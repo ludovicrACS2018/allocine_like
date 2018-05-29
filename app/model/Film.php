@@ -1,7 +1,7 @@
 <?php
 
 class Film{
-    public $id, $description, $expiration, $slug, $gender, $real;
+    public $id, $slug, $gender, $real;
     
     public static function getFromSlug($slug) {
        $db = Database::getInstance();
@@ -26,10 +26,8 @@ class Film{
                 where h.id_film = :id_film
                 and r.id_realisateur = h.id_realisateur";
         $stmt = $db->prepare($sql);
-        $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        $stmt->bindValue(':id_realisateur', $real, PDO::PARAM_STR);
-        $stmt->execute();
-        return $stmt->fetch();
+        $stmt->bindValue(':real', $real, PDO::PARAM_INT);
+        return $stmt->fetch(PDO::FETCH_ASSOC); 
    }
 
    public static function getGenresFromFilm($gender){
@@ -39,9 +37,7 @@ class Film{
             where gh.id_film = :id_film
             and g.id_genre = gh.id_genre";
     $stmt = $db->prepare($sql);
-    $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $stmt->bindValue(':gender', $gender, PDO::PARAM_STR);
-    $stmt->execute();
-    return $stmt->fetchAll();
+    $stmt->bindValue(':gender', $gender, PDO::PARAM_INT);
+    return $stmt->fetch(PDO::FETCH_ASSOC); 
 }
 }
