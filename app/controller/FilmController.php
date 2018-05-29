@@ -4,8 +4,8 @@ class FilmController extends Controller {
     public function display() {
         $slug = $this->route["params"]["slug"];
         $film = Film::getFromSlug($slug);
-        $gender = Film::getRealisateurFromFilm();
-        $real = Film::getGenresFromFilm();
+        $gender = Film::getRealisateurFromFilm($realisateur);
+        $real = Film::getGenresFromFilm($gender);
         if ($film ===false){
             $template = $this->twig->loadTemplate('/Error/404.html.twig');
             echo $this->twig->render($template, array());
