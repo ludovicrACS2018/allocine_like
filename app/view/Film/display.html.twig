@@ -39,15 +39,18 @@
         <p>Synopsis : {{ film.fil_description }}</p>
         <p>Réalisateur : 
             {% if realisateur|length > 0 %}
-                {{ realisateur.rea_prenom }} {{ realisateur.rea_nom }}
+            {% for real in realisateur %}
+                {{ real.rea_prenom }} {{ real.rea_nom }}
+                {% if loop.last == false %} / {% endif %}
+            {% endfor %}
             {% else %}
                 -
             {% endif %}
         </p>
         <p>Date de sortie : {{ film.fil_annee }}</p>
         <p>Genres :
-            {% if genres|length > 0 %} 
-                {% for genre in genres %}
+            {% if gender|length > 0 %} 
+                {% for genre in gender %}
                     {{ genre.gen_genre }} {% if loop.last == false %} / {% endif %}
                 {% endfor %}
             {% else %}
