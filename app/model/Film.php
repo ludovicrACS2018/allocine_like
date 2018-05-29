@@ -31,7 +31,7 @@ class Film{
         $stmt->execute();
         return $stmt->fetchAll(); 
    }
-
+ 
    public static function getGenresFromFilm($id_film){
     $db = Database::getInstance();
     $sql = "SELECT * FROM genre AS g 
@@ -44,4 +44,4 @@ class Film{
     $stmt->execute();
     return $stmt->fetchAll(); 
 }
-}
+}       

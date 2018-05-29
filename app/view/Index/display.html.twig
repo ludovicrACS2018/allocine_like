@@ -1,73 +1,20 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <title>Allocine-Like</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-</head>
-
-<body class="blue-grey lighten-5">
-    <header>
-        <nav class="transparent" role="navigation">
-            <div class="nav-wrapper container"><a id="logo-container" href="index.php" class="brand-logo t-uppercase">Allocine Like</a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="index.php">Accueil</a></li>
-                </ul>
-                <ul id="nav-mobile" class="sidenav">
-                    <li><a href="index.php">Accueil</a></li>
-                </ul>
-                <a href="index.php" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+{% extends "/Layout/layout.html.twig" %}
+{% block title %}
+{{ parent() }} - Home
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="section">
+        <div class="row">
+            {% for film in films %}<!--Boucle-->
+            <div class="card-image small responsive-img">
+                <a href="film/{{ film.slug }}">
+                    <img class="col s12 m4 w40 h400p mt50" src="{{ film.fil_image }}" alt="{{ film.fil_titre }}">
+                </a>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <div class="section">
-            <div class="row">
-                {% for film in films %}<!--Boucle-->
-                <div class="card-image small responsive-img">
-                    <a href="film/{{ film.slug }}">
-                        <img class="col s12 m4 w40 h400p mt50" src="{{ film.fil_image }}" alt="{{ film.fil_titre }}">
-                    </a>
-                </div>
-                {% endfor %}
-            </div>
+            {% endfor %}
         </div>
     </div>
+</div>
     
-    <footer class="page-footer orange">
-        <div class="container">
-            <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Zombie Ipsum</h5>
-                <p class="grey-text text-lighten-4">Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem.</p>
-            </div>
-            <div class="col l3 s12 right">
-                <h5 class="white-text">Contact</h5>
-                <ul>
-                <li><a class="white-text" href="http://www.facebook.com">Facebook</a></li>
-                <li><a class="white-text" href="http://www.twitter.com">Twitter</a></li>
-                <li><a class="white-text" href="http://www.linkedin.com">LinkedIn</a></li>
-                <li><a class="white-text" href="http://www.instagram.com">Instagram</a></li>
-                </ul>
-            </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-            Made by <a class="orange-text text-lighten-3" href="https://github.com/ludovicrACS2018">Ludovic R.</a>,<a class="orange-text text-lighten-3" href="https://github.com/morual"> Monica B.</a>, <a class="orange-text text-lighten-3" href="https://github.com/k0bat"> Jimmy C.</a>,<a class="orange-text text-lighten-3" href="https://github.com/Draker21"> Jim P.</a>
-            </div>
-        </div>
-    </footer>
-
-    <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="materialize/js/materialize.js"></script>
-    <script src="materialize/js/init.js"></script>
-    <script src="script.js"></script>
-</body>
-
-</html>
+{% endblock %}
